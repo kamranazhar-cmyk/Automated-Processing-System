@@ -10,3 +10,18 @@
 2026-10-05 14:47:09,338 | INFO | APS.Application | Application startup completed.
 2026-10-05 14:47:09,792 | INFO | APS.Main | Splash screen displayed.
 2026-10-05 14:47:09,875 | INFO | APS.Main | Main window displayed.
+2026-10-05 15:08:19,974 | INFO | APS.Main | APS main entry point started.
+2026-10-05 15:08:20,071 | INFO | APS.Application | ==================================================
+2026-10-05 15:08:20,071 | INFO | APS.Application | Starting Automated Processing System | Version 0.2.0 | Build APS-002
+2026-10-05 15:08:20,071 | INFO | APS.Application | Application directories verified.
+2026-10-05 15:08:20,072 | INFO | APS.Application | Application configuration loaded.
+2026-10-05 15:08:20,072 | INFO | APS.DatabaseInitializer | Starting APS database initialization.
+2026-10-05 15:08:20,396 | INFO | APS.DatabaseInitializer | APS database schema version 1 initialized.
+2026-10-05 15:08:20,396 | INFO | APS.Application | Database infrastructure initialized.
+2026-10-05 15:08:20,397 | INFO | APS.ErrorHandler | Global exception handler installed.
+2026-10-05 15:08:20,401 | INFO | APS.Application | Application startup completed.
+2026-10-05 15:08:20,777 | INFO | APS.Main | Splash screen displayed.
+2026-10-05 15:08:20,843 | INFO | APS.Main | Main window displayed.
+2026-10-05 15:09:17,183 | INFO | APS.Application | Application shutdown initiated.
+2026-10-05 15:09:17,183 | INFO | APS.Application | Application shutdown completed.
+2026-10-05 15:09:17,183 | INFO | APS.Application | ==================================================

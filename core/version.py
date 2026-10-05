@@ -1,8 +1,7 @@
 APP_NAME = "Automated Processing System"
-VERSION = "0.1.1"
+VERSION = "0.2.0"
 COMPANY = "APS Financial Solutions"
-BUILD = "APS-001B"
+BUILD = "APS-002"
 
-# Application release information
-RELEASE_STAGE = "Application Infrastructure"
+RELEASE_STAGE = "Database Core"
 RELEASE_STATUS = "Development"

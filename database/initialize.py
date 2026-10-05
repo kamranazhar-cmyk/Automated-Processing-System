@@ -4,42 +4,38 @@ from datetime import datetime, timezone
 
 from core.logger import get_logger
 from database.connection import database
+from database.models import DATABASE_SCHEMA_VERSION, SCHEMA_SQL
 
 
 logger = get_logger("DatabaseInitializer")
 
 
-DATABASE_SCHEMA_VERSION = 0
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
 
 
 def initialize_database() -> None:
     """
-    Initialize the APS SQLite database infrastructure.
-
-    APS-001B intentionally creates only the system metadata
-    structure. Business tables will be implemented in APS-002.
+    Create and initialize the APS database schema.
     """
 
-    logger.info("Starting database initialization.")
+    logger.info("Starting APS database initialization.")
 
     with database.session() as connection:
 
-        connection.execute(
-            """
-            CREATE TABLE IF NOT EXISTS system_metadata (
-                key TEXT PRIMARY KEY,
-                value TEXT NOT NULL,
-                updated_at TEXT NOT NULL
-            )
-            """
+        connection.executescript(
+            SCHEMA_SQL
         )
 
-        current_time = datetime.now(timezone.utc).isoformat()
+        current_time = utc_now()
 
         metadata = {
             "application": "Automated Processing System",
-            "schema_version": str(DATABASE_SCHEMA_VERSION),
+            "schema_version": str(
+                DATABASE_SCHEMA_VERSION
+            ),
             "database_status": "initialized",
+            "last_schema_update": current_time,
         }
 
         for key, value in metadata.items():
@@ -52,6 +48,7 @@ def initialize_database() -> None:
                     updated_at
                 )
                 VALUES (?, ?, ?)
+
                 ON CONFLICT(key)
                 DO UPDATE SET
                     value = excluded.value,
@@ -65,13 +62,14 @@ def initialize_database() -> None:
             )
 
     logger.info(
-        "Database initialization completed successfully."
+        "APS database schema version %s initialized.",
+        DATABASE_SCHEMA_VERSION,
     )
 
 
 def get_database_schema_version() -> int:
     """
-    Return the currently installed database schema version.
+    Return the installed APS database schema version.
     """
 
     with database.session() as connection:
@@ -85,9 +83,14 @@ def get_database_schema_version() -> int:
         ).fetchone()
 
     if result is None:
-        return DATABASE_SCHEMA_VERSION
+        return 0
 
     try:
-        return int(result["value"])
-    except (TypeError, ValueError):
-        return DATABASE_SCHEMA_VERSION
+        return int(
+            result["value"]
+        )
+    except (
+        TypeError,
+        ValueError,
+    ):
+        return 0
