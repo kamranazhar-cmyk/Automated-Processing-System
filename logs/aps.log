@@ -1,0 +1,12 @@
+2026-10-05 14:47:09,128 | INFO | APS.Main | APS main entry point started.
+2026-10-05 14:47:09,231 | INFO | APS.Application | ==================================================
+2026-10-05 14:47:09,231 | INFO | APS.Application | Starting Automated Processing System | Version 0.1.1 | Build APS-001B
+2026-10-05 14:47:09,232 | INFO | APS.Application | Application directories verified.
+2026-10-05 14:47:09,234 | INFO | APS.Application | Application configuration loaded.
+2026-10-05 14:47:09,234 | INFO | APS.DatabaseInitializer | Starting database initialization.
+2026-10-05 14:47:09,334 | INFO | APS.DatabaseInitializer | Database initialization completed successfully.
+2026-10-05 14:47:09,334 | INFO | APS.Application | Database infrastructure initialized.
+2026-10-05 14:47:09,334 | INFO | APS.ErrorHandler | Global exception handler installed.
+2026-10-05 14:47:09,338 | INFO | APS.Application | Application startup completed.
+2026-10-05 14:47:09,792 | INFO | APS.Main | Splash screen displayed.
+2026-10-05 14:47:09,875 | INFO | APS.Main | Main window displayed.

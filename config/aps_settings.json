@@ -1,0 +1,22 @@
+{
+    "application": {
+        "name": "Automated Processing System",
+        "version": "0.1.1",
+        "build": "APS-001B",
+        "environment": "development"
+    },
+    "storage": {
+        "database_directory": "C:\\Book-Generator\\Automated-Processing-System\\database",
+        "document_directory": "C:\\Book-Generator\\Automated-Processing-System\\customer_documents",
+        "backup_directory": "C:\\Book-Generator\\Automated-Processing-System\\backups",
+        "log_directory": "C:\\Book-Generator\\Automated-Processing-System\\logs"
+    },
+    "database": {
+        "filename": "aps.db",
+        "schema_version": 0
+    },
+    "system": {
+        "auto_backup_enabled": true,
+        "logging_enabled": true
+    }
+}

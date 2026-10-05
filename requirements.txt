@@ -1,0 +1,6 @@
+PySide6>=6.10,<6.12
+opencv-python
+pytesseract
+Pillow
+reportlab
+pyinstaller
